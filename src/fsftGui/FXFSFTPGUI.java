@@ -20,13 +20,13 @@ public class FXFSFTPGUI extends Application {
     public void start(Stage stage) throws Exception {
         Pane pane = new Pane();
         scene = new Scene(pane, 1600, 900);
+
         stage.setTitle("FSFTP");
         stage.setScene(scene);
         stage.show();
         Button button = new Button("Click Me!");
         pane.getChildren().add(button);
-        Box myBox = new Box(100, 200, 100);
-        pane.getChildren().add(myBox);
+
     }
 
 
