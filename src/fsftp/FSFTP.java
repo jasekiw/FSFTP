@@ -148,6 +148,7 @@ public class FSFTP
 			session.setPassword(password);
 			session.setConfig(config);
 			session.connect();
+
 		}
 		catch(JSchException e)
 		{
@@ -155,6 +156,14 @@ public class FSFTP
 			return false;
 		}
 		return true;
+	}
+
+	/**
+	 * Checks if the session is connected to the server
+	 * @return Connected
+	 */
+	public boolean isConnected() {
+		return session != null && session.isConnected();
 	}
 
 	/**
