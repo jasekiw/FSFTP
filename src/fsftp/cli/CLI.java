@@ -57,7 +57,6 @@ public class CLI {
     void startSession(ParameterParser parser) {
 
         fsftp.setServer(parser.host,parser.user, parser.password, parser.port);
-        fsftp.initialize();
         boolean stopped =false;
         String inputLine = "";
         while(!stopped)
