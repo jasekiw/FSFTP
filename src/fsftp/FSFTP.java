@@ -16,8 +16,17 @@ public class FSFTP {
 	{
 		FSFTP fastsftp = new FSFTP();
 		fastsftp.initialize();
-		fastsftp.setServer("visualrdseed.com", "root", "k1w1k1w1");
-		System.out.println(fastsftp.directoryListing("/var/www/html"));
+		try {
+			BufferedReader reader = new BufferedReader(new FileReader(new File("settings.txt")));
+			String server = reader.readLine();
+			String username = reader.readLine();
+			String password = reader.readLine();
+			fastsftp.setServer(server, username, password);
+			System.out.println(fastsftp.directoryListing("/var/www/html"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
 	}
 	public void initialize()
 	{
